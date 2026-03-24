@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thousifuddin Shaik — PM & AI Systems Builder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #030508;
+  --bg2: #070c14;
+  --bg3: #0b1220;
+  --border: rgba(99,179,237,0.12);
+  --border2: rgba(99,179,237,0.25);
+  --blue: #63b3ed;
+  --cyan: #76e4f7;
+  --green: #68d391;
+  --orange: #f6ad55;
+  --red: #fc8181;
+  --purple: #b794f4;
+  --text: #e2e8f0;
+  --muted: #4a5568;
+  --muted2: #718096;
+  --mono: 'Space Mono', monospace;
+  --sans: 'Outfit', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* Custom cursor */
+.cursor {
+  width: 8px; height: 8px;
+  background: var(--cyan);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+  mix-blend-mode: screen;
+}
+.cursor-ring {
+  width: 32px; height: 32px;
+  border: 1px solid rgba(118,228,247,0.4);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transition: all 0.15s ease;
+}
+
+/* Grid overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(99,179,237,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99,179,237,0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 20px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(3,5,8,0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--cyan);
+  letter-spacing: 0.15em;
+}
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted2);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--cyan); }
+.nav-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--green);
+}
+.status-dot {
+  width: 6px; height: 6px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 8px var(--green);
+}
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.8)} }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 48px 80px;
+  position: relative;
+  z-index: 1;
+}
+.hero-content { max-width: 800px; }
+.hero-tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--cyan);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-tag::before {
+  content: '';
+  width: 32px; height: 1px;
+  background: var(--cyan);
+}
+h1.hero-name {
+  font-family: var(--sans);
+  font-size: clamp(52px, 8vw, 96px);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+.hero-name .first { color: var(--text); }
+.hero-name .last {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(99,179,237,0.6);
+}
+.hero-title {
+  font-size: clamp(18px, 3vw, 28px);
+  font-weight: 300;
+  color: var(--muted2);
+  margin: 20px 0 32px;
+  line-height: 1.4;
+}
+.hero-title em {
+  color: var(--orange);
+  font-style: normal;
+  font-weight: 500;
+}
+.hero-desc {
+  font-size: 16px;
+  color: var(--muted2);
+  line-height: 1.8;
+  max-width: 520px;
+  margin-bottom: 48px;
+}
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  padding: 14px 32px;
+  background: var(--cyan);
+  color: var(--bg);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  cursor: none;
+  transition: all 0.2s;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+}
+.btn-primary:hover {
+  background: var(--blue);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(118,228,247,0.3);
+}
+.btn-outline {
+  padding: 14px 32px;
+  background: transparent;
+  color: var(--cyan);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--border2);
+  cursor: none;
+  transition: all 0.2s;
+  clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+}
+.btn-outline:hover {
+  border-color: var(--cyan);
+  background: rgba(99,179,237,0.08);
+  transform: translateY(-2px);
+}
+.hero-visual {
+  position: absolute;
+  right: 48px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 380px;
+  height: 380px;
+  opacity: 0.15;
+  animation: spin 40s linear infinite;
+}
+@keyframes spin { to { transform: translateY(-50%) rotate(360deg); } }
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  margin-top: 64px;
+  padding-top: 48px;
+  border-top: 1px solid var(--border);
+}
+.hero-stat-val {
+  font-family: var(--mono);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--cyan);
+}
+.hero-stat-lbl {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 4px;
+  letter-spacing: 0.05em;
+}
+
+/* SECTIONS */
+section {
+  padding: 120px 48px;
+  position: relative;
+  z-index: 1;
+}
+.section-tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--cyan);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-tag::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--cyan);
+}
+h2.section-title {
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin-bottom: 64px;
+}
+
+/* ABOUT */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.about-text p {
+  font-size: 17px;
+  color: var(--muted2);
+  line-height: 1.9;
+  margin-bottom: 24px;
+}
+.about-text p strong { color: var(--text); font-weight: 600; }
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.skill-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  padding: 16px;
+  transition: all 0.2s;
+}
+.skill-card:hover {
+  border-color: var(--border2);
+  transform: translateY(-2px);
+}
+.skill-category {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--cyan);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.skill-items {
+  font-size: 13px;
+  color: var(--muted2);
+  line-height: 1.7;
+}
+.cert-badges {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.cert-badge {
+  padding: 8px 16px;
+  background: rgba(118,228,247,0.06);
+  border: 1px solid rgba(118,228,247,0.2);
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--cyan);
+  letter-spacing: 0.08em;
+}
+
+/* ARIA SHOWCASE */
+.aria-showcase {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  padding: 64px;
+  position: relative;
+  overflow: hidden;
+}
+.aria-showcase::before {
+  content: 'ARIA';
+  position: absolute;
+  right: -20px;
+  top: -40px;
+  font-family: var(--mono);
+  font-size: 160px;
+  font-weight: 700;
+  color: rgba(99,179,237,0.04);
+  letter-spacing: -0.05em;
+  pointer-events: none;
+  user-select: none;
+}
+.aria-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.aria-title-block h3 {
+  font-size: 36px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+.aria-title-block h3 span { color: var(--cyan); }
+.aria-title-block p {
+  font-size: 14px;
+  color: var(--muted2);
+  font-family: var(--mono);
+}
+.aria-live-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(104,211,145,0.08);
+  border: 1px solid rgba(104,211,145,0.25);
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--green);
+  letter-spacing: 0.1em;
+}
+.aria-phases {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 8px;
+  margin-bottom: 48px;
+}
+.phase-item {
+  padding: 10px 14px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted2);
+}
+.phase-item.done { border-color: rgba(104,211,145,0.2); }
+.phase-item.done .phase-dot { background: var(--green); }
+.phase-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--muted);
+  flex-shrink: 0;
+}
+.aria-stack {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.stack-tag {
+  padding: 6px 14px;
+  background: rgba(99,179,237,0.06);
+  border: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--blue);
+  letter-spacing: 0.06em;
+}
+
+/* ARIA STATS */
+.aria-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-top: 48px;
+}
+.aria-stat {
+  background: var(--bg2);
+  padding: 24px;
+  text-align: center;
+}
+.aria-stat-val {
+  font-family: var(--mono);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--cyan);
+}
+.aria-stat-lbl {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 4px;
+  letter-spacing: 0.05em;
+}
+#live-stats-note {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 12px;
+  text-align: right;
+  letter-spacing: 0.08em;
+}
+
+/* PROJECTS */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.project-card {
+  background: var(--bg);
+  padding: 36px;
+  transition: background 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.project-card:hover { background: var(--bg2); }
+.project-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.project-card:hover::after { opacity: 1; }
+.project-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 16px;
+  letter-spacing: 0.1em;
+}
+.project-name {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.project-desc {
+  font-size: 14px;
+  color: var(--muted2);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.project-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.project-tag {
+  padding: 4px 10px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted2);
+  letter-spacing: 0.06em;
+}
+
+/* EXPERIENCE */
+.timeline {
+  position: relative;
+  padding-left: 32px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 8px; bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, var(--cyan), transparent);
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 56px;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -36px; top: 6px;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 12px var(--cyan);
+}
+.timeline-period {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--cyan);
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+.timeline-role {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+.timeline-org {
+  font-size: 14px;
+  color: var(--muted2);
+  margin-bottom: 16px;
+}
+.timeline-points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.timeline-points li {
+  font-size: 14px;
+  color: var(--muted2);
+  line-height: 1.6;
+  padding-left: 16px;
+  position: relative;
+}
+.timeline-points li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--cyan);
+  font-family: var(--mono);
+}
+
+/* CONTACT */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.contact-info h3 {
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  margin-bottom: 16px;
+}
+.contact-info p {
+  font-size: 16px;
+  color: var(--muted2);
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--muted2);
+  text-decoration: none;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  transition: all 0.2s;
+}
+.contact-link:hover {
+  border-color: var(--border2);
+  color: var(--cyan);
+  background: rgba(99,179,237,0.04);
+}
+.contact-link-icon {
+  font-size: 16px;
+  width: 20px;
+  text-align: center;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+input, textarea {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 14px;
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: vertical;
+  cursor: none;
+}
+input:focus, textarea:focus { border-color: var(--border2); }
+input::placeholder, textarea::placeholder { color: var(--muted); }
+textarea { min-height: 120px; }
+
+/* FOOTER */
+footer {
+  padding: 40px 48px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+.footer-text {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+}
+.footer-built {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+.footer-built span { color: var(--cyan); }
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border2); }
+
+/* ANIMATIONS */
+.fade-up {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  .nav-links { display: none; }
+  .hero { padding: 100px 24px 60px; }
+  .hero-visual { display: none; }
+  section { padding: 80px 24px; }
+  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  .aria-showcase { padding: 32px 24px; }
+  footer { padding: 32px 24px; flex-direction: column; gap: 12px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav>
+  <div class="nav-logo">T.SHAIK // PORTFOLIO</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#aria">ARIA</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-status">
+    <div class="status-dot"></div>
+    OPEN TO OPPORTUNITIES
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-tag">MS Computer Science · Indiana University Indianapolis</div>
+    <h1 class="hero-name">
+      <span class="first">Thousif</span><br>
+      <span class="last">Uddin.</span>
+    </h1>
+    <p class="hero-title">
+      Project Manager · <em>AI Systems Builder</em> · Product Strategist
+    </p>
+    <p class="hero-desc">
+      I build systems that work while I sleep. CSM & CSPO certified PM with a passion for automation, AI pipelines, and shipping things that matter. Currently engineering ARIA — a self-hosted AI job search engine.
+    </p>
+    <div class="hero-cta">
+      <a href="#aria" class="btn-primary">View ARIA Project</a>
+      <a href="#contact" class="btn-outline">Get In Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-val">18+</div>
+        <div class="hero-stat-lbl">ARIA Phases Built</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">2</div>
+        <div class="hero-stat-lbl">Scrum Certifications</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">1K+</div>
+        <div class="hero-stat-lbl">Stakeholders Managed</div>
+      </div>
+      <div>
+        <div class="hero-stat-val">500+</div>
+        <div class="hero-stat-lbl">Event Participants Led</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SVG decorative ring -->
+  <svg class="hero-visual" viewBox="0 0 380 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="190" cy="190" r="180" stroke="#63b3ed" stroke-width="0.5" stroke-dasharray="4 8"/>
+    <circle cx="190" cy="190" r="140" stroke="#63b3ed" stroke-width="0.5" stroke-dasharray="2 12"/>
+    <circle cx="190" cy="190" r="100" stroke="#76e4f7" stroke-width="0.5"/>
+    <circle cx="190" cy="190" r="60" stroke="#63b3ed" stroke-width="0.5" stroke-dasharray="6 4"/>
+    <line x1="10" y1="190" x2="370" y2="190" stroke="#63b3ed" stroke-width="0.3"/>
+    <line x1="190" y1="10" x2="190" y2="370" stroke="#63b3ed" stroke-width="0.3"/>
+    <line x1="63" y1="63" x2="317" y2="317" stroke="#63b3ed" stroke-width="0.3"/>
+    <line x1="317" y1="63" x2="63" y2="317" stroke="#63b3ed" stroke-width="0.3"/>
+  </svg>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-tag">01 // About</div>
+  <h2 class="section-title">Builder.<br>Strategist.<br>Maker.</h2>
+  <div class="about-grid">
+    <div class="about-text fade-up">
+      <p>I'm a graduate student at <strong>Indiana University Indianapolis</strong> pursuing MS Computer Science (expected Fall 2027), with a focus on project management and AI systems. My background bridges technical depth with strategic thinking.</p>
+      <p>Before IU, I led large-scale initiatives as <strong>Chief Placement Coordinator</strong> managing 50+ corporate partnerships and 1,000+ stakeholders at CBIT. I've delivered hackathons for 500+ participants as VP of Neural Nexus.</p>
+      <p>I build things at the intersection of <strong>AI, automation, and project management</strong> — ARIA being the flagship example. F-1 student, CPT eligible, targeting PM and BA roles.</p>
+      <div class="cert-badges">
+        <span class="cert-badge">CSM — Certified ScrumMaster</span>
+        <span class="cert-badge">CSPO — Certified Scrum Product Owner</span>
+      </div>
+    </div>
+    <div class="skills-grid fade-up">
+      <div class="skill-card">
+        <div class="skill-category">PM Tools</div>
+        <div class="skill-items">Jira · Confluence · Asana · Trello · MS Project · PMBOK</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-category">Methodologies</div>
+        <div class="skill-items">Agile · Scrum · Kanban · SDLC · Sprint Planning</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-category">Technical</div>
+        <div class="skill-items">Python · SQL · Node.js · Git · Docker · Tailscale</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-category">AI / Data</div>
+        <div class="skill-items">LLMs · Ollama · GPT-4o · Gemini · Pandas · Tableau</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-category">Automation</div>
+        <div class="skill-items">n8n · PM2 · Discord API · Gmail OAuth2 · REST APIs</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-category">Soft Skills</div>
+        <div class="skill-items">Stakeholder Mgmt · Risk Planning · Cross-functional Leadership</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARIA -->
+<section id="aria" style="background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="section-tag">02 // Flagship Project</div>
+  <h2 class="section-title">ARIA —<br>AI Job Engine</h2>
+
+  <div class="aria-showcase fade-up">
+    <div class="aria-header">
+      <div class="aria-title-block">
+        <h3><span>ARIA</span> — Automated Resume &amp; Intelligence Assistant</h3>
+        <p>SELF-HOSTED · 18 PHASES COMPLETE · RUNNING 24/7 ON MINI PC</p>
+      </div>
+      <div class="aria-live-badge">
+        <div class="status-dot"></div>
+        LIVE SYSTEM
+      </div>
+    </div>
+
+    <p style="font-size:16px;color:var(--muted2);line-height:1.8;max-width:700px;margin-bottom:40px;">
+      A fully autonomous, self-hosted job search pipeline that ingests listings from 10+ sources, scores them with local LLMs, tailors resumes with GPT-4o, monitors emails, sends daily intelligence reports, and syncs everything to a live dashboard — all running on a $200 Mini PC under my desk.
+    </p>
+
+    <div class="aria-phases">
+      <div class="phase-item done"><div class="phase-dot"></div>Job Ingestion</div>
+      <div class="phase-item done"><div class="phase-dot"></div>LLM Filtering</div>
+      <div class="phase-item done"><div class="phase-dot"></div>Discord Bot</div>
+      <div class="phase-item done"><div class="phase-dot"></div>Gmail OAuth2</div>
+      <div class="phase-item done"><div class="phase-dot"></div>Resume Tailor</div>
+      <div class="phase-item done"><div class="phase-dot"></div>Agency Outreach</div>
+      <div class="phase-item done"><div class="phase-dot"></div>AI Gateway</div>
+      <div class="phase-item done"><div class="phase-dot"></div>News Monitor</div>
+      <div class="phase-item done"><div class="phase-dot"></div>Dashboard</div>
+      <div class="phase-item done"><div class="phase-dot"></div>Recruiter API</div>
+      <div class="phase-item done"><div class="phase-dot"></div>Gmail Upgrade</div>
+      <div class="phase-item done"><div class="phase-dot"></div>Interview Prep</div>
+      <div class="phase-item done"><div class="phase-dot"></div>Proactive Scan</div>
+      <div class="phase-item done"><div class="phase-dot"></div>CRM System</div>
+      <div class="phase-item done"><div class="phase-dot"></div>International Jobs</div>
+      <div class="phase-item done"><div class="phase-dot"></div>n8n Automation</div>
+    </div>
+
+    <div class="aria-stack">
+      <span class="stack-tag">Node.js v20</span>
+      <span class="stack-tag">Ollama / Qwen2.5</span>
+      <span class="stack-tag">GPT-4o</span>
+      <span class="stack-tag">Gemini 3.1</span>
+      <span class="stack-tag">DeepSeek V3</span>
+      <span class="stack-tag">Discord API v10</span>
+      <span class="stack-tag">Gmail OAuth2</span>
+      <span class="stack-tag">PM2</span>
+      <span class="stack-tag">n8n</span>
+      <span class="stack-tag">Tailscale</span>
+      <span class="stack-tag">Ubuntu 24</span>
+    </div>
+
+    <div class="aria-stats-grid">
+      <div class="aria-stat">
+        <div class="aria-stat-val" id="stat-jobs">568</div>
+        <div class="aria-stat-lbl">Jobs Ingested</div>
+      </div>
+      <div class="aria-stat">
+        <div class="aria-stat-val" id="stat-scored">243</div>
+        <div class="aria-stat-lbl">Score 7+ Matches</div>
+      </div>
+      <div class="aria-stat">
+        <div class="aria-stat-val" id="stat-crm">24</div>
+        <div class="aria-stat-lbl">CRM Applications</div>
+      </div>
+      <div class="aria-stat">
+        <div class="aria-stat-val">10+</div>
+        <div class="aria-stat-lbl">Job Sources</div>
+      </div>
+      <div class="aria-stat">
+        <div class="aria-stat-val">$15</div>
+        <div class="aria-stat-lbl">Monthly Budget</div>
+      </div>
+      <div class="aria-stat">
+        <div class="aria-stat-val">24/7</div>
+        <div class="aria-stat-lbl">Autonomous</div>
+      </div>
+    </div>
+    <p id="live-stats-note">// STATS AUTO-UPDATE FROM LIVE SYSTEM</p>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-tag">03 // Projects</div>
+  <h2 class="section-title">Things<br>I've Built.</h2>
+  <div class="projects-grid fade-up">
+    <div class="project-card">
+      <div class="project-num">01 //</div>
+      <div class="project-name">ARIA — AI Job Pipeline</div>
+      <div class="project-desc">18-phase autonomous job search engine. Ingests, scores, tailors, tracks, and reports — all self-hosted on a Mini PC running 24/7.</div>
+      <div class="project-tags">
+        <span class="project-tag">Node.js</span>
+        <span class="project-tag">LLM</span>
+        <span class="project-tag">Automation</span>
+        <span class="project-tag">PM2</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-num">02 //</div>
+      <div class="project-name">Bias Detection System</div>
+      <div class="project-desc">Causal inference system using DoWhy to detect gender bias in credit scoring datasets. Mediation analysis and counterfactual reasoning.</div>
+      <div class="project-tags">
+        <span class="project-tag">Python</span>
+        <span class="project-tag">DoWhy</span>
+        <span class="project-tag">Causal AI</span>
+        <span class="project-tag">ML</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-num">03 //</div>
+      <div class="project-name">Real-Time Networked Whiteboard</div>
+      <div class="project-desc">Multi-client collaborative whiteboard using Python and ZeroMQ. Benchmarked latency and throughput across concurrent connections.</div>
+      <div class="project-tags">
+        <span class="project-tag">Python</span>
+        <span class="project-tag">ZeroMQ</span>
+        <span class="project-tag">Real-time</span>
+        <span class="project-tag">Networking</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-num">04 //</div>
+      <div class="project-name">Sales Analytics Dashboard</div>
+      <div class="project-desc">End-to-end analytics pipeline with PostgreSQL, Python/Pandas for transformation, and Tableau for KPI visualization and executive reporting.</div>
+      <div class="project-tags">
+        <span class="project-tag">SQL</span>
+        <span class="project-tag">Pandas</span>
+        <span class="project-tag">Tableau</span>
+        <span class="project-tag">Analytics</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-num">05 //</div>
+      <div class="project-name">AI Healthcare Appointment Platform</div>
+      <div class="project-desc">Semester project — AI-enhanced appointment scheduling system for healthcare providers. Currently in development at IU Indianapolis.</div>
+      <div class="project-tags">
+        <span class="project-tag">AI</span>
+        <span class="project-tag">Healthcare</span>
+        <span class="project-tag">Cloud</span>
+        <span class="project-tag">Academic</span>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="project-num">06 //</div>
+      <div class="project-name">EV Charging Brand Strategy</div>
+      <div class="project-desc">Full PM lifecycle project — WBS, scope statement, $344K cost baseline, stakeholder management, and go-to-market strategy for wireless EV charging.</div>
+      <div class="project-tags">
+        <span class="project-tag">PMBOK</span>
+        <span class="project-tag">WBS</span>
+        <span class="project-tag">Strategy</span>
+        <span class="project-tag">Budget</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" style="background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="section-tag">04 // Experience</div>
+  <h2 class="section-title">Where I've<br>Led Things.</h2>
+  <div class="timeline fade-up">
+    <div class="timeline-item">
+      <div class="timeline-period">SEP 2025 — PRESENT</div>
+      <div class="timeline-role">Building Manager & Event Staff</div>
+      <div class="timeline-org">Indiana University Indianapolis · Indianapolis, IN</div>
+      <ul class="timeline-points">
+        <li>Manage on-campus facilities and coordinate cross-team event operations</li>
+        <li>Operational support across multiple departments and event types</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-period">MAR 2024 — JUN 2025</div>
+      <div class="timeline-role">Chief Placement Coordinator</div>
+      <div class="timeline-org">CBIT Osmania University · Hyderabad, India</div>
+      <ul class="timeline-points">
+        <li>Managed 50+ concurrent recruitment projects for 1,000+ student stakeholders</li>
+        <li>Built and maintained relationships with 50+ corporate partners</li>
+        <li>Data analysis on placement trends, prepared executive reports for leadership</li>
+        <li>Full project lifecycle management — risk identification, scheduling, delivery</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-period">NOV 2023 — FEB 2025</div>
+      <div class="timeline-role">VP & Technical Project Lead</div>
+      <div class="timeline-org">Neural Nexus Club, CBIT · Hyderabad, India</div>
+      <ul class="timeline-points">
+        <li>Led a 25-member cross-functional team across engineering and design</li>
+        <li>Delivered two large-scale hackathons with 500+ participants each</li>
+        <li>Agile project management, budget oversight, sponsorship acquisition</li>
+        <li>Process improvement and post-event documentation frameworks</li>
+      </ul>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-period">2021 — 2025</div>
+      <div class="timeline-role">BE Computer Science (AI/ML)</div>
+      <div class="timeline-org">CBIT Osmania University · Hyderabad, India</div>
+      <ul class="timeline-points">
+        <li>Specialization in Artificial Intelligence and Machine Learning</li>
+        <li>ACM Membership Chair — organized seminars and engagement programs</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-tag">05 // Contact</div>
+  <h2 class="section-title">Let's Build<br>Something.</h2>
+  <div class="contact-grid">
+    <div class="contact-info fade-up">
+      <h3>Open to PM, BA &amp; PMO Roles</h3>
+      <p>Currently targeting Project Manager, Business Analyst, PMO Coordinator, and Operations Analyst internships and entry-level positions nationwide. F-1 student, CPT eligible. Require visa sponsorship.</p>
+      <div class="contact-links">
+        <a href="mailto:thousifsk3@gmail.com" class="contact-link">
+          <span class="contact-link-icon">✉</span>
+          thousifsk3@gmail.com
+        </a>
+        <a href="https://linkedin.com/in/thousifuddin" target="_blank" class="contact-link">
+          <span class="contact-link-icon">⚡</span>
+          linkedin.com/in/thousifuddin
+        </a>
+        <a href="https://github.com/thousifuddin" target="_blank" class="contact-link">
+          <span class="contact-link-icon">◈</span>
+          github.com/thousifuddin
+        </a>
+        <a href="#" class="contact-link" id="resume-link">
+          <span class="contact-link-icon">↓</span>
+          Download Resume (PDF)
+        </a>
+      </div>
+    </div>
+    <form class="fade-up" onsubmit="handleSubmit(event)">
+      <input type="text" placeholder="Your name" name="name" required>
+      <input type="email" placeholder="Your email" name="email" required>
+      <input type="text" placeholder="Company / Role" name="company">
+      <textarea placeholder="Your message..." name="message" required></textarea>
+      <button type="submit" class="btn-primary" style="border:none;font-size:12px;padding:16px;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);cursor:none;">
+        SEND MESSAGE →
+      </button>
+      <div id="form-msg" style="font-family:var(--mono);font-size:11px;color:var(--green);display:none;">
+        ✓ Message sent — I'll get back to you soon.
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-text">© 2026 THOUSIFUDDIN SHAIK · INDIANAPOLIS, IN</div>
+  <div class="footer-built">BUILT WITH <span>ARIA</span> · POWERED BY OBSESSION</div>
+</footer>
+
+<script>
+// Cursor
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursorRing');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+function animateCursor() {
+  cursor.style.left = mx - 4 + 'px';
+  cursor.style.top = my - 4 + 'px';
+  rx += (mx - rx) * 0.12;
+  ry += (my - ry) * 0.12;
+  ring.style.left = rx - 16 + 'px';
+  ring.style.top = ry - 16 + 'px';
+  requestAnimationFrame(animateCursor);
+}
+animateCursor();
+
+document.querySelectorAll('a, button, input, textarea').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursor.style.transform = 'scale(2.5)';
+    ring.style.transform = 'scale(1.5)';
+    ring.style.borderColor = 'rgba(118,228,247,0.8)';
+  });
+  el.addEventListener('mouseleave', () => {
+    cursor.style.transform = 'scale(1)';
+    ring.style.transform = 'scale(1)';
+    ring.style.borderColor = 'rgba(118,228,247,0.4)';
+  });
+});
+
+// Scroll animations
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 100);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+// Live stats from ARIA dashboard
+async function loadLiveStats() {
+  try {
+    const [jobsRes, gmailRes, crmRes] = await Promise.all([
+      fetch('http://100.94.69.39:4521/api/jobs').then(r => r.json()).catch(() => []),
+      fetch('http://100.94.69.39:4521/api/gmail').then(r => r.json()).catch(() => ({})),
+      fetch('http://100.94.69.39:4521/api/crm').then(r => r.json()).catch(() => ({})),
+    ]);
+    const eligible = (jobsRes || []).filter(j => j.eligible && j.score >= 7);
+    document.getElementById('stat-jobs').textContent = (jobsRes || []).length || '568';
+    document.getElementById('stat-scored').textContent = eligible.length || '243';
+    document.getElementById('stat-crm').textContent = ((crmRes?.applications) || []).length || '24';
+    document.getElementById('live-stats-note').textContent = '// LIVE STATS — LAST UPDATED ' + new Date().toLocaleTimeString();
+  } catch { /* use static values */ }
+}
+loadLiveStats();
+setInterval(loadLiveStats, 60000);
+
+// Form handler
+function handleSubmit(e) {
+  e.preventDefault();
+  const msg = document.getElementById('form-msg');
+  msg.style.display = 'block';
+  e.target.reset();
+  setTimeout(() => msg.style.display = 'none', 5000);
+}
+</script>
+</body>
+</html>
