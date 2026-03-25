@@ -4,6 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thousifuddin Shaik — PM & AI Systems Builder</title>
+<meta property="og:title" content="Thousifuddin Shaik | AI Systems Builder & PM">
+<meta property="og:description" content="Creator of TALON — a self-hosted AI life OS. CSM/CSPO certified PM building autonomous AI pipelines. Open to PM, BA & PMO roles.">
+<meta property="og:image" content="https://thousif3.github.io/talon-stats/preview.png">
+<meta property="og:url" content="https://thousif3.github.io">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Thousifuddin Shaik | AI Systems Builder">
+<meta name="twitter:description" content="Creator of TALON. CSM/CSPO PM. Open to opportunities.">
+<meta name="description" content="Thousifuddin Shaik — MS CS student at IU Indianapolis, CSM/CSPO certified PM, creator of TALON autonomous AI system. Open to PM, BA, PMO roles nationwide.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Outfit:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 <style>
@@ -200,8 +209,8 @@ footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;align-i
       <p>Before IU, I led large-scale initiatives as <strong>Chief Placement Coordinator</strong> managing 50+ corporate partnerships and 1,000+ stakeholders at CBIT. I've delivered hackathons for 500+ participants as VP of Neural Nexus.</p>
       <p>I build things at the intersection of <strong>AI, automation, and project management</strong> — TALON being the flagship example. F-1 student, CPT eligible, targeting PM and BA roles nationwide.</p>
       <div class="cert-badges">
-        <span class="cert-badge">CSM — Certified ScrumMaster</span>
-        <span class="cert-badge">CSPO — Certified Scrum Product Owner</span>
+        <a href="https://www.credly.com/search#q=thousifuddin&t=oe,cp,ci" target="_blank" rel="noopener" class="cert-badge" style="text-decoration:none;cursor:none;">✓ CSM — Certified ScrumMaster</a>
+        <a href="https://www.credly.com/search#q=thousifuddin&t=oe,cp,ci" target="_blank" rel="noopener" class="cert-badge" style="text-decoration:none;cursor:none;">✓ CSPO — Certified Scrum Product Owner</a>
       </div>
     </div>
     <div class="skills-grid fade-up">
@@ -226,7 +235,10 @@ footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;align-i
         <h3><span>TALON</span> — Tactical Automated Logistic Operating Network</h3>
         <p>A self-hosted AI assistant running 24/7 on a personal Mini PC. TALON handles your job search, daily news intelligence, Gmail monitoring, interview prep, recruiter outreach, and financial tracking — fully automated, fully private, zero cloud dependency.</p>
       </div>
-      <div class="talon-live-badge"><div class="status-dot"></div>LIVE 24/7</div>
+      <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+        <div class="talon-live-badge" id="talon-live-badge"><div class="status-dot"></div>● LIVE SYSTEM</div>
+        <a href="https://thousif3.github.io/talon-stats/" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;padding:8px 16px;background:rgba(79,142,247,0.08);border:1px solid rgba(79,142,247,0.25);font-family:var(--mono);font-size:11px;color:var(--blue);text-decoration:none;letter-spacing:0.1em;cursor:none;">🔍 VIEW LIVE STATS →</a>
+      </div>
     </div>
 
     <!-- Capability Cards -->
@@ -282,6 +294,55 @@ footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;align-i
       <div class="phase-item done"><div class="phase-dot"></div>n8n Automation</div>
     </div>
 
+    <!-- Architecture Diagram -->
+    <div style="margin-bottom:32px;">
+      <div style="font-family:var(--mono);font-size:10px;color:var(--cyan);letter-spacing:.15em;text-transform:uppercase;margin-bottom:16px;">System Architecture</div>
+      <div style="background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:20px;overflow-x:auto;">
+        <svg viewBox="0 0 700 80" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;display:block;">
+          <defs><marker id="arr" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#22d3ee"/></marker></defs>
+          <!-- Sources -->
+          <rect x="0" y="20" width="110" height="40" rx="6" fill="rgba(79,142,247,.12)" stroke="rgba(79,142,247,.3)" stroke-width="1"/>
+          <text x="55" y="37" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#4f8ef7">SOURCES</text>
+          <text x="55" y="51" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#6b7fa0">Adzuna·Jooble·USAJobs</text>
+          <!-- Arrow -->
+          <line x1="110" y1="40" x2="148" y2="40" stroke="#22d3ee" stroke-width="1.5" marker-end="url(#arr)"/>
+          <!-- LLM Filter -->
+          <rect x="150" y="20" width="120" height="40" rx="6" fill="rgba(34,211,238,.08)" stroke="rgba(34,211,238,.3)" stroke-width="1"/>
+          <text x="210" y="37" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#22d3ee">LLM FILTER</text>
+          <text x="210" y="51" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#6b7fa0">Gemini·NVIDIA·Ollama</text>
+          <!-- Arrow -->
+          <line x1="270" y1="40" x2="308" y2="40" stroke="#22d3ee" stroke-width="1.5" marker-end="url(#arr)"/>
+          <!-- Gmail -->
+          <rect x="310" y="20" width="110" height="40" rx="6" fill="rgba(192,132,252,.08)" stroke="rgba(192,132,252,.3)" stroke-width="1"/>
+          <text x="365" y="37" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#c084fc">GMAIL INTEL</text>
+          <text x="365" y="51" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#6b7fa0">OAuth2·Parser</text>
+          <!-- Arrow -->
+          <line x1="420" y1="40" x2="458" y2="40" stroke="#22d3ee" stroke-width="1.5" marker-end="url(#arr)"/>
+          <!-- TALON Core -->
+          <rect x="460" y="15" width="90" height="50" rx="6" fill="rgba(52,211,153,.1)" stroke="rgba(52,211,153,.4)" stroke-width="1.5"/>
+          <text x="505" y="35" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" font-weight="700" fill="#34d399">TALON</text>
+          <text x="505" y="50" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#6b7fa0">CRM·Dashboard</text>
+          <!-- Arrow -->
+          <line x1="550" y1="40" x2="588" y2="40" stroke="#22d3ee" stroke-width="1.5" marker-end="url(#arr)"/>
+          <!-- Actions -->
+          <rect x="590" y="20" width="110" height="40" rx="6" fill="rgba(251,146,60,.08)" stroke="rgba(251,146,60,.3)" stroke-width="1"/>
+          <text x="645" y="37" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#fb923c">ACTIONS</text>
+          <text x="645" y="51" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="8" fill="#6b7fa0">Discord·Email·n8n</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Current Sprint -->
+    <div style="background:rgba(52,211,153,.05);border:1px solid rgba(52,211,153,.15);border-radius:10px;padding:16px;margin-bottom:32px;">
+      <div style="font-family:var(--mono);font-size:10px;color:var(--green);letter-spacing:.15em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:8px;"><div class="status-dot"></div>CURRENT SPRINT</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <span style="padding:5px 12px;background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.2);font-family:var(--mono);font-size:11px;color:var(--green);">✓ Phase 19: Portfolio Site</span>
+        <span style="padding:5px 12px;background:rgba(79,142,247,.1);border:1px solid rgba(79,142,247,.2);font-family:var(--mono);font-size:11px;color:var(--blue);">▶ Phase 20: GitHub Auto-Posting</span>
+        <span style="padding:5px 12px;background:rgba(74,88,120,.15);border:1px solid rgba(74,88,120,.2);font-family:var(--mono);font-size:11px;color:var(--muted2);">⏳ Phase 21: 50+ Agency Outreach</span>
+        <span style="padding:5px 12px;background:rgba(74,88,120,.15);border:1px solid rgba(74,88,120,.2);font-family:var(--mono);font-size:11px;color:var(--muted2);">⏳ Phase 22: Chat Web UI</span>
+      </div>
+    </div>
+
     <div class="talon-stack">
       <span class="stack-tag">Node.js v20</span>
       <span class="stack-tag">Ollama / Qwen2.5</span>
@@ -318,13 +379,21 @@ footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;align-i
     <div class="project-card">
       <div class="project-num">01 //</div>
       <div class="project-name">TALON — AI Life OS</div>
-      <div class="project-desc">18-phase autonomous AI assistant. Job search, news intelligence, Gmail monitoring, CRM, interview prep — all self-hosted, running 24/7.</div>
+      <div class="project-desc">
+          <b style="color:var(--red);font-size:11px;">PROBLEM</b> Manual job search took 3+ hours/day with no tracking.<br>
+          <b style="color:var(--cyan);font-size:11px;">SOLUTION</b> 18-phase autonomous AI pipeline — ingestion, scoring, tailoring, CRM.<br>
+          <b style="color:var(--green);font-size:11px;">IMPACT</b> 663 jobs scanned, 24/7 coverage, ~$0 monthly API cost.
+        </div>
       <div class="project-tags"><span class="project-tag">Node.js</span><span class="project-tag">LLM</span><span class="project-tag">Automation</span><span class="project-tag">PM2</span><span class="project-tag">n8n</span></div>
     </div>
     <div class="project-card">
       <div class="project-num">02 //</div>
       <div class="project-name">Bias Detection System</div>
-      <div class="project-desc">Causal inference system using DoWhy to detect gender bias in credit scoring datasets. Mediation analysis and counterfactual reasoning.</div>
+      <div class="project-desc">
+          <b style="color:var(--red);font-size:11px;">PROBLEM</b> Credit scoring algorithms showed unexplained gender-based outcome differences.<br>
+          <b style="color:var(--cyan);font-size:11px;">SOLUTION</b> DoWhy causal inference with mediation analysis and counterfactual testing.<br>
+          <b style="color:var(--green);font-size:11px;">IMPACT</b> Identified and quantified bias pathways with statistical confidence.
+        </div>
       <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">DoWhy</span><span class="project-tag">Causal AI</span><span class="project-tag">ML</span></div>
     </div>
     <div class="project-card">
@@ -348,7 +417,11 @@ footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;align-i
     <div class="project-card">
       <div class="project-num">06 //</div>
       <div class="project-name">EV Charging Brand Strategy</div>
-      <div class="project-desc">Full PM lifecycle — WBS, scope statement, $344K cost baseline, stakeholder management, and go-to-market for wireless EV charging infrastructure.</div>
+      <div class="project-desc">
+          <b style="color:var(--red);font-size:11px;">PROBLEM</b> Wireless EV charging lacked structured brand strategy and stakeholder alignment.<br>
+          <b style="color:var(--cyan);font-size:11px;">SOLUTION</b> Full PMBOK lifecycle — WBS, scope, $344K baseline, go-to-market plan.<br>
+          <b style="color:var(--green);font-size:11px;">IMPACT</b> Delivered on-scope with 10% contingency buffer and executive presentation.
+        </div>
       <div class="project-tags"><span class="project-tag">PMBOK</span><span class="project-tag">WBS</span><span class="project-tag">Strategy</span><span class="project-tag">Budget</span></div>
     </div>
   </div>
@@ -451,22 +524,29 @@ footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;align-i
 </footer>
 
 <script>
-// Custom cursor
-const cursor=document.getElementById('cursor');
-const ring=document.getElementById('cursorRing');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
-function animateCursor(){
-  cursor.style.left=mx-4+'px';cursor.style.top=my-4+'px';
-  rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;
-  ring.style.left=rx-16+'px';ring.style.top=ry-16+'px';
-  requestAnimationFrame(animateCursor);
+// Custom cursor — desktop only
+const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+if (isTouchDevice) {
+  document.body.style.cursor = 'auto';
+  document.getElementById('cursor').style.display = 'none';
+  document.getElementById('cursorRing').style.display = 'none';
+} else {
+  const cursor=document.getElementById('cursor');
+  const ring=document.getElementById('cursorRing');
+  let mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;});
+  function animateCursor(){
+    cursor.style.left=mx-4+'px';cursor.style.top=my-4+'px';
+    rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;
+    ring.style.left=rx-16+'px';ring.style.top=ry-16+'px';
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+  document.querySelectorAll('a,button,input,textarea').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{cursor.style.transform='scale(2.5)';ring.style.transform='scale(1.5)';ring.style.borderColor='rgba(118,228,247,0.8)';});
+    el.addEventListener('mouseleave',()=>{cursor.style.transform='scale(1)';ring.style.transform='scale(1)';ring.style.borderColor='rgba(118,228,247,0.4)';});
+  });
 }
-animateCursor();
-document.querySelectorAll('a,button,input,textarea').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cursor.style.transform='scale(2.5)';ring.style.transform='scale(1.5)';ring.style.borderColor='rgba(118,228,247,0.8)';});
-  el.addEventListener('mouseleave',()=>{cursor.style.transform='scale(1)';ring.style.transform='scale(1)';ring.style.borderColor='rgba(118,228,247,0.4)';});
-});
 
 // Scroll animations
 const obs=new IntersectionObserver(entries=>{
@@ -476,7 +556,28 @@ document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 
 // Live stats from TALON
 async function loadLiveStats(){
+  const badge = document.getElementById('talon-live-badge');
+  const note = document.getElementById('live-stats-note');
   try{
+    // Try GitHub Pages stats first (public, works on any device)
+    const ghRes = await fetch('https://thousif3.github.io/talon-stats/stats.json').then(r=>r.json()).catch(()=>null);
+    if (ghRes && ghRes.pipeline) {
+      const p = ghRes.pipeline;
+      const syncTime = new Date(ghRes.generatedAt);
+      const hoursOld = (Date.now() - syncTime.getTime()) / 3600000;
+      document.getElementById('stat-jobs').textContent = p.jobsScanned || '568';
+      document.getElementById('stat-scored').textContent = p.score7plus || '243';
+      document.getElementById('stat-crm').textContent = p.crmTracked || '24';
+      if (hoursOld > 24) {
+        if (badge) { badge.textContent = '⚠ ARCHIVED DATA'; badge.style.background='rgba(251,146,60,.08)'; badge.style.borderColor='rgba(251,146,60,.25)'; badge.style.color='#fb923c'; }
+        note.textContent = '// ARCHIVED — LAST UPDATED ' + ghRes.generatedAtET;
+      } else {
+        if (badge) { badge.textContent = '● LIVE SYSTEM'; }
+        note.textContent = '// LIVE — SYNCED ' + ghRes.generatedAtET;
+      }
+      return;
+    }
+    // Fallback: try local IP (works on same Tailscale network)
     const[jobsRes,crmRes]=await Promise.all([
       fetch('http://100.94.69.39:4521/api/jobs').then(r=>r.json()).catch(()=>[]),
       fetch('http://100.94.69.39:4521/api/crm').then(r=>r.json()).catch(()=>({})),
@@ -485,7 +586,7 @@ async function loadLiveStats(){
     if((jobsRes||[]).length>0)document.getElementById('stat-jobs').textContent=(jobsRes||[]).length;
     if(eligible.length>0)document.getElementById('stat-scored').textContent=eligible.length;
     if(((crmRes?.applications)||[]).length>0)document.getElementById('stat-crm').textContent=((crmRes?.applications)||[]).length;
-    document.getElementById('live-stats-note').textContent='// LIVE — LAST UPDATED '+new Date().toLocaleTimeString('en-US',{timeZone:'America/Indiana/Indianapolis'});
+    note.textContent='// LIVE — LAST UPDATED '+new Date().toLocaleTimeString('en-US',{timeZone:'America/Indiana/Indianapolis'});
   }catch{/* use static fallback values */}
 }
 loadLiveStats();
@@ -506,5 +607,57 @@ document.getElementById('contact-form').addEventListener('submit',function(e){
   setTimeout(()=>msg.style.display='none',6000);
 });
 </script>
+
+<!-- Interactive Terminal -->
+<div id="terminal-container" style="position:fixed;bottom:24px;right:24px;z-index:500;font-family:'Space Mono',monospace;">
+  <div id="terminal-box" style="display:none;background:rgba(3,5,8,0.97);border:1px solid var(--border2);border-radius:12px;padding:16px;width:320px;max-height:280px;overflow-y:auto;backdrop-filter:blur(12px);">
+    <div id="terminal-output" style="font-size:11px;color:var(--muted2);line-height:1.8;margin-bottom:8px;">
+      <div style="color:var(--cyan);">TALON Terminal v1.0</div>
+      <div>Type <span style="color:var(--orange);">help</span> for commands</div>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;border-top:1px solid var(--border);padding-top:8px;">
+      <span style="color:var(--cyan);font-size:11px;">$</span>
+      <input id="terminal-input" type="text" placeholder="help" style="background:transparent;border:none;color:var(--text);font-family:'Space Mono',monospace;font-size:11px;outline:none;flex:1;cursor:auto;">
+    </div>
+  </div>
+  <button id="terminal-toggle" onclick="toggleTerminal()" style="background:rgba(3,5,8,0.95);border:1px solid var(--border2);border-radius:8px;padding:10px 16px;color:var(--cyan);font-family:'Space Mono',monospace;font-size:11px;cursor:auto;letter-spacing:.08em;backdrop-filter:blur(12px);">
+    &gt;_ TERMINAL
+  </button>
+</div>
+
+<script>
+const TERMINAL_CMDS = {
+  help: `Available commands:<br><span style="color:var(--cyan);">download-resume</span> — Download PDF resume<br><span style="color:var(--cyan);">list-skills</span> — Show all skills<br><span style="color:var(--cyan);">contact</span> — Get contact info<br><span style="color:var(--cyan);">talon-stats</span> — Open live TALON stats<br><span style="color:var(--cyan);">linkedin</span> — Open LinkedIn profile<br><span style="color:var(--cyan);">github</span> — Open GitHub profile<br><span style="color:var(--cyan);">clear</span> — Clear terminal`,
+  'list-skills': `<span style="color:var(--green);">PM:</span> Agile · Scrum · Kanban · PMBOK · Jira · Confluence<br><span style="color:var(--blue);">Tech:</span> Python · SQL · Node.js · Git · Docker<br><span style="color:var(--purple);">AI:</span> LLMs · Ollama · GPT-4o · Gemini · Pandas<br><span style="color:var(--orange);">Certs:</span> CSM · CSPO (Scrum Alliance 2025)`,
+  contact: `<span style="color:var(--cyan);">Email:</span> thousifsk3@gmail.com<br><span style="color:var(--cyan);">LinkedIn:</span> /in/thousifuddin-shaik<br><span style="color:var(--cyan);">GitHub:</span> github.com/thousif3<br><span style="color:var(--cyan);">Location:</span> Indianapolis, IN`,
+  'talon-stats': `Opening TALON live stats...`,
+  linkedin: `Opening LinkedIn...`,
+  github: `Opening GitHub...`,
+  'download-resume': `Opening resume download...`,
+  clear: '__clear__',
+};
+function toggleTerminal(){const b=document.getElementById('terminal-box');b.style.display=b.style.display==='none'?'block':'none';if(b.style.display==='block')document.getElementById('terminal-input').focus();}
+document.getElementById('terminal-input').addEventListener('keydown',function(e){
+  if(e.key!=='Enter')return;
+  const cmd=this.value.trim().toLowerCase();
+  const out=document.getElementById('terminal-output');
+  if(!cmd){return;}
+  if(cmd==='clear'){out.innerHTML='<div style="color:var(--cyan);">TALON Terminal v1.0</div><div>Type <span style="color:var(--orange);">help</span> for commands</div>';this.value='';return;}
+  const resp=TERMINAL_CMDS[cmd];
+  out.innerHTML+=`<div><span style="color:var(--muted2);">$ </span><span style="color:var(--text);">${cmd}</span></div>`;
+  if(resp){
+    out.innerHTML+=`<div style="color:var(--muted2);">${resp}</div>`;
+    if(cmd==='talon-stats')setTimeout(()=>window.open('https://thousif3.github.io/talon-stats/','_blank'),300);
+    if(cmd==='linkedin')setTimeout(()=>window.open('https://www.linkedin.com/in/thousifuddin-shaik/','_blank'),300);
+    if(cmd==='github')setTimeout(()=>window.open('https://github.com/thousif3','_blank'),300);
+    if(cmd==='download-resume')setTimeout(()=>document.getElementById('resume-link').click(),300);
+  } else {
+    out.innerHTML+=`<div style="color:var(--red);">Command not found: ${cmd}. Type <span style="color:var(--orange);">help</span></div>`;
+  }
+  this.value='';
+  out.scrollTop=out.scrollHeight;
+});
+</script>
+
 </body>
 </html>
