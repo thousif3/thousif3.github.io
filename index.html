@@ -20,7 +20,7 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--bg);color:var(--text);overflow-x:hidden;cursor:none}
+body{font-family:var(--sans);background:#050810;color:#dde4f0;overflow-x:hidden;cursor:none}
 .cursor{position:fixed;width:8px;height:8px;background:var(--cyan);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);box-shadow:0 0 12px var(--cyan),0 0 24px rgba(34,211,238,.4);transition:width .15s,height .15s}
 .cursor-ring{position:fixed;width:32px;height:32px;border:1px solid rgba(34,211,238,.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%)}
 body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(34,211,238,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(34,211,238,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0}
@@ -78,6 +78,7 @@ h1 .role{display:block;color:var(--muted2);font-size:.46em;font-weight:600;lette
 
 /* SECTIONS */
 section{position:relative;z-index:1;padding:96px 48px}
+.hero,.nav,.section{position:relative;z-index:1}
 .si{max-width:1200px;margin:0 auto}
 .stag{font-family:var(--mono);font-size:10px;color:var(--cyan);letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:10px}
 .stag::before{content:'//';opacity:.4}
@@ -196,7 +197,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px 48p
 <div class="glow-top"></div>
 
 <nav>
-  <div class="nav-logo"><div class="pulse-dot"></div>THOUSIF · SYS</div>
+  <div class="nav-logo" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="cursor:pointer"><div class="pulse-dot"></div>THOUSIF.DEV</div>
   <ul class="nav-links">
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
@@ -215,7 +216,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px 48p
         <span class="name">Thousifuddin<br>Shaik</span>
         <span class="role">Project Manager · Business Analyst · CS Engineer</span>
       </h1>
-      <p class="hero-desc">MS Computer Science @ IU Indianapolis. CSM &amp; CSPO certified. Chief Placement Coordinator @ CBIT. 4 internships. Building AI-powered systems that automate real workflows. 3+ years of leadership in operations, product, and tech.</p>
+      <p class="hero-desc">MS Computer Science @ IU Indianapolis. CSM &amp; CSPO certified. Chief Placement Coordinator @ <abbr title="Chaitanya Bharathi Institute of Technology — NAAC A++, NIRF Top 200" style="text-decoration:none;border-bottom:1px dotted currentColor;cursor:help">CBIT</abbr>. 4 internships. Building AI-powered systems that automate real workflows. 3+ years of leadership in operations, product, and tech.</p>
       <div class="badges">
         <span class="b bc">MS CS · IU Indianapolis</span>
         <span class="b bg">CSM Certified</span>
@@ -278,10 +279,26 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px 48p
           <div class="parr">↗</div>
           <div class="pnum">03</div>
           <div class="ptitle">Neural Nexus AI Club</div>
-          <p class="pdesc">VP of CBIT's AI/ML club. Organized "Bits and Bots: De-mystifying AI & ML" event. Grew membership, hosted workshops.</p>
+          <p class="pdesc">VP of <abbr title="Chaitanya Bharathi Institute of Technology — NAAC A++, NIRF Top 200" style="text-decoration:none;border-bottom:1px dotted currentColor;cursor:help">CBIT</abbr>'s AI/ML club. Organized "Bits and Bots: De-mystifying AI & ML" event. Grew membership, hosted workshops.</p>
           <div class="ptags"><span class="pt">Leadership</span><span class="pt">AI/ML</span><span class="pt">Events</span></div>
         </div>
       </div>
+    </div>
+    <div class="pgrid reveal" style="margin-top:18px;grid-template-columns:1fr 1fr;">
+      <a href="https://github.com/thousif3" target="_blank" rel="noopener" class="pc ao">
+        <div class="parr">↗</div>
+        <div class="pnum">04 / Causal-Fairness-Analysis</div>
+        <div class="ptitle">Causal Fairness Analysis</div>
+        <p class="pdesc">ML pipeline detecting and mitigating bias in hiring datasets using causal inference. Implemented counterfactual fairness metrics.</p>
+        <div class="ptags"><span class="pt">Python</span><span class="pt">CausalML</span><span class="pt">Fairness</span><span class="pt">ML</span></div>
+      </a>
+      <a href="https://github.com/thousif3" target="_blank" rel="noopener" class="pc ap">
+        <div class="parr">↗</div>
+        <div class="pnum">05 / Online-Code-Editor</div>
+        <div class="ptitle">Online Code Editor</div>
+        <p class="pdesc">Browser-based multi-language code editor with real-time execution, syntax highlighting, and shareable snippets.</p>
+        <div class="ptags"><span class="pt">JavaScript</span><span class="pt">React</span><span class="pt">Monaco Editor</span><span class="pt">Node.js</span></div>
+      </a>
     </div>
   </div>
 </section>
@@ -296,12 +313,12 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px 48p
       <div class="expc reveal">
         <div class="exph">
           <div><div class="exprole">Chief Placement Coordinator</div><div class="expsub">Led campus placements for entire CSE-AI&ML department</div></div>
-          <div><div class="exporg">CBIT · Hyderabad</div><div class="expdate">2024 – 2025</div></div>
+          <div><div class="exporg"><abbr title="Chaitanya Bharathi Institute of Technology — NAAC A++, NIRF Top 200" style="text-decoration:none;border-bottom:1px dotted currentColor;cursor:help">CBIT</abbr> · Hyderabad</div><div class="expdate">2024 – 2025</div></div>
         </div>
         <ul class="expbullets">
-          <li>Coordinated placement drives resulting in successful offers for 100+ students across CSE and AI&ML departments at CBIT</li>
+          <li>Coordinated placement drives resulting in successful offers for 100+ students across CSE and AI&ML departments at <abbr title="Chaitanya Bharathi Institute of Technology — NAAC A++, NIRF Top 200" style="text-decoration:none;border-bottom:1px dotted currentColor;cursor:help">CBIT</abbr></li>
           <li>Managed relationships with 20+ recruiting companies spanning product, IT, consulting, and services sectors</li>
-          <li>Awarded gold plaque by CBIT Principal and formal Certificate of Appreciation for outstanding dedication</li>
+          <li>Awarded gold plaque by <abbr title="Chaitanya Bharathi Institute of Technology — NAAC A++, NIRF Top 200" style="text-decoration:none;border-bottom:1px dotted currentColor;cursor:help">CBIT</abbr> Principal and formal Certificate of Appreciation for outstanding dedication</li>
           <li>Built placement tracking systems and maintained company contact databases to streamline the recruitment pipeline</li>
         </ul>
       </div>
@@ -353,12 +370,12 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px 48p
 
       <div class="expc reveal" style="border-left-color:var(--green)">
         <div class="exph">
-          <div><div class="exprole">VP — Neural Nexus AI/ML Club &amp; ACM Membership Chair</div><div class="expsub">CBIT's premier AI/ML student club + ACM Chapter</div></div>
-          <div><div class="exporg" style="color:var(--green)">CBIT · Hyderabad</div><div class="expdate">2023 – 2024</div></div>
+          <div><div class="exprole">VP — Neural Nexus AI/ML Club &amp; ACM Membership Chair</div><div class="expsub"><abbr title="Chaitanya Bharathi Institute of Technology — NAAC A++, NIRF Top 200" style="text-decoration:none;border-bottom:1px dotted currentColor;cursor:help">CBIT</abbr>'s premier AI/ML student club + ACM Chapter</div></div>
+          <div><div class="exporg" style="color:var(--green)"><abbr title="Chaitanya Bharathi Institute of Technology — NAAC A++, NIRF Top 200" style="text-decoration:none;border-bottom:1px dotted currentColor;cursor:help">CBIT</abbr> · Hyderabad</div><div class="expdate">2023 – 2024</div></div>
         </div>
         <ul class="expbullets">
           <li>Led Neural Nexus club as VP; organized "Bits and Bots: De-mystifying AI &amp; ML" event with LearnWolf (Oct 2023)</li>
-          <li>Served as Membership Chairperson and General Secretary of ACM CBIT Chapter 2023-24</li>
+          <li>Served as Membership Chairperson and General Secretary of ACM <abbr title="Chaitanya Bharathi Institute of Technology — NAAC A++, NIRF Top 200" style="text-decoration:none;border-bottom:1px dotted currentColor;cursor:help">CBIT</abbr> Chapter 2023-24</li>
           <li>Organized impactful workshops and seminars; participated in ACM India Regional Chapter Summit, Oct 2024</li>
         </ul>
       </div>
@@ -384,18 +401,18 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px 48p
     <div class="stag">Recognition</div>
     <div class="stitle">Awards &amp; <span>Achievements</span></div>
     <div class="achgrid reveal">
-      <div class="ach gold"><div class="ach-ic">🏆</div><div class="ach-t">CPC Gold Award</div><div class="ach-o">CBIT · Principal Award 2024-25</div><div class="ach-d">Gold plaque for outstanding commitment as Chief Placement Coordinator, coordinating placements for 100+ students.</div></div>
-      <div class="ach blue"><div class="ach-ic">🎖️</div><div class="ach-t">Certificate of Appreciation — CPC</div><div class="ach-o">CBIT · Signed by Principal</div><div class="ach-d">Formal recognition signed by Prof. C.V. Narasimhulu for exceptional service as Chief Placement Coordinator.</div></div>
+      <div class="ach gold"><div class="ach-ic">🏆</div><div class="ach-t">CPC Gold Award</div><div class="ach-o"><abbr title="Chaitanya Bharathi Institute of Technology — NAAC A++, NIRF Top 200" style="text-decoration:none;border-bottom:1px dotted currentColor;cursor:help">CBIT</abbr> · Principal Award 2024-25</div><div class="ach-d">Gold plaque for outstanding commitment as Chief Placement Coordinator, coordinating placements for 100+ students.</div></div>
+      <div class="ach blue"><div class="ach-ic">🎖️</div><div class="ach-t">Certificate of Appreciation — CPC</div><div class="ach-o"><abbr title="Chaitanya Bharathi Institute of Technology — NAAC A++, NIRF Top 200" style="text-decoration:none;border-bottom:1px dotted currentColor;cursor:help">CBIT</abbr> · Signed by Principal</div><div class="ach-d">Formal recognition signed by Prof. C.V. Narasimhulu for exceptional service as Chief Placement Coordinator.</div></div>
       <div class="ach purple"><div class="ach-ic">🇺🇸</div><div class="ach-t">EducationUSA Certificate</div><div class="ach-o">US Dept of State · Y-Axis Foundation</div><div class="ach-d">Recognized for outstanding dedication as volunteer for EducationUSA Graduate Roadshow, US Department of State.</div></div>
-      <div class="ach green"><div class="ach-ic">🧠</div><div class="ach-t">VP Recognition — Neural Nexus</div><div class="ach-o">CBIT · HOD AI &amp; ML + Principal</div><div class="ach-d">Certificate of Recognition for exceptional leadership as VP of Neural Nexus Club, advancing AI/ML knowledge.</div></div>
-      <div class="ach cyan"><div class="ach-ic">⚙️</div><div class="ach-t">ACM Membership Chairperson</div><div class="ach-o">ACM CBIT Chapter · 2023-24</div><div class="ach-d">Recognition for exemplary service as Membership Chairperson, organizing events and workshops as General Secretary.</div></div>
+      <div class="ach green"><div class="ach-ic">🧠</div><div class="ach-t">VP Recognition — Neural Nexus</div><div class="ach-o"><abbr title="Chaitanya Bharathi Institute of Technology — NAAC A++, NIRF Top 200" style="text-decoration:none;border-bottom:1px dotted currentColor;cursor:help">CBIT</abbr> · HOD AI &amp; ML + Principal</div><div class="ach-d">Certificate of Recognition for exceptional leadership as VP of Neural Nexus Club, advancing AI/ML knowledge.</div></div>
+      <div class="ach cyan"><div class="ach-ic">⚙️</div><div class="ach-t">ACM Membership Chairperson</div><div class="ach-o">ACM <abbr title="Chaitanya Bharathi Institute of Technology — NAAC A++, NIRF Top 200" style="text-decoration:none;border-bottom:1px dotted currentColor;cursor:help">CBIT</abbr> Chapter · 2023-24</div><div class="ach-d">Recognition for exemplary service as Membership Chairperson, organizing events and workshops as General Secretary.</div></div>
       <div class="ach gold"><div class="ach-ic">📡</div><div class="ach-t">ACM India Regional Summit</div><div class="ach-o">ACM · KLH Hyderabad · Oct 2024</div><div class="ach-d">Certificate of Participation for active engagement at ACM India Regional Chapter Summit, KLH Bachupally.</div></div>
-      <div class="ach blue"><div class="ach-ic">🐺</div><div class="ach-t">LearnWolf Certificate</div><div class="ach-o">LearnWolf · ISO · StartupIndia</div><div class="ach-d">Awarded for organizing "Bits and Bots: De-mystifying AI &amp; ML" event through Nexus Club, CBIT, Oct 2023.</div></div>
+      <div class="ach blue"><div class="ach-ic">🐺</div><div class="ach-t">LearnWolf Certificate</div><div class="ach-o">LearnWolf · ISO · StartupIndia</div><div class="ach-d">Awarded for organizing "Bits and Bots: De-mystifying AI &amp; ML" event through Nexus Club, <abbr title="Chaitanya Bharathi Institute of Technology — NAAC A++, NIRF Top 200" style="text-decoration:none;border-bottom:1px dotted currentColor;cursor:help">CBIT</abbr>, Oct 2023.</div></div>
       <div class="ach orange"><div class="ach-ic">🤖</div><div class="ach-t">AI/ML Internship Certificate</div><div class="ach-o">Ybi Foundation · ISO 9001 · AICTE</div><div class="ach-d">Completed AI/ML internship with exceptional dedication. Certified by Ministry of Corporate Affairs, Government of India.</div></div>
       <div class="ach pink"><div class="ach-ic">🎬</div><div class="ach-t">Frontend Dev Internship</div><div class="ach-o">MotionCut · AICTE + MSME Certified</div><div class="ach-d">Recognized for exceptional dedication and robust technical aptitude as Frontend Web Development Intern, Nov–Dec 2023.</div></div>
       <div class="ach yellow"><div class="ach-ic">💻</div><div class="ach-t">Web Development Virtual Intern</div><div class="ach-o">CodersCave · AICTE + MSME</div><div class="ach-d">Outstanding performance completing 1-month virtual web development internship at CodersCave.</div></div>
       <div class="ach green"><div class="ach-ic">☕</div><div class="ach-t">TASK Java Fundamentals</div><div class="ach-o">Telangana Govt · 90 Hours</div><div class="ach-d">Completed 90-hour Java training certified by Telangana Academy for Skill and Knowledge (TASK).</div></div>
-      <div class="ach purple"><div class="ach-ic">🎓</div><div class="ach-t">CBIT CDC Guest Lecture</div><div class="ach-o">Career Development Centre · CBIT</div><div class="ach-d">Participated in "Journey from .C to .EXE and Memory Management" — Career Development Centre, Feb 2022.</div></div>
+      <div class="ach purple"><div class="ach-ic">🎓</div><div class="ach-t"><abbr title="Chaitanya Bharathi Institute of Technology — NAAC A++, NIRF Top 200" style="text-decoration:none;border-bottom:1px dotted currentColor;cursor:help">CBIT</abbr> CDC Guest Lecture</div><div class="ach-o">Career Development Centre · <abbr title="Chaitanya Bharathi Institute of Technology — NAAC A++, NIRF Top 200" style="text-decoration:none;border-bottom:1px dotted currentColor;cursor:help">CBIT</abbr></div><div class="ach-d">Participated in "Journey from .C to .EXE and Memory Management" — Career Development Centre, Feb 2022.</div></div>
     </div>
   </div>
 </section>
@@ -422,7 +439,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px 48p
       <div class="cc"><div class="cci">🏅</div><div><div class="ccn">Certified Scrum Master (CSM)</div><div class="cco">Scrum Alliance</div></div></div>
       <div class="cc"><div class="cci">🏅</div><div><div class="ccn">Certified Scrum Product Owner (CSPO)</div><div class="cco">Scrum Alliance</div></div></div>
       <div class="cc"><div class="cci">🎓</div><div><div class="ccn">MS Computer Science</div><div class="cco">Indiana University Indianapolis · In Progress</div></div></div>
-      <div class="cc"><div class="cci">🎓</div><div><div class="ccn">BE Computer Science (AI &amp; ML)</div><div class="cco">CBIT · Osmania University</div></div></div>
+      <div class="cc"><div class="cci">🎓</div><div><div class="ccn">BE Computer Science (AI &amp; ML)</div><div class="cco"><abbr title="Chaitanya Bharathi Institute of Technology — NAAC A++, NIRF Top 200" style="text-decoration:none;border-bottom:1px dotted currentColor;cursor:help">CBIT</abbr> · Osmania University</div></div></div>
       <div class="cc"><div class="cci">🤖</div><div><div class="ccn">AI/ML Internship Certificate</div><div class="cco">Ybi Foundation · ISO 9001 · AICTE · Jun 2024</div></div></div>
       <div class="cc"><div class="cci">🎬</div><div><div class="ccn">Frontend Web Development Internship</div><div class="cco">MotionCut · AICTE + MSME · Nov–Dec 2023</div></div></div>
       <div class="cc"><div class="cci">💻</div><div><div class="ccn">Web Development Virtual Internship</div><div class="cco">CodersCave · AICTE + MSME · 2023</div></div></div>
@@ -487,6 +504,79 @@ loadStats();
 // Typing effect
 const tag=document.getElementById('heroTag');
 if(tag){const txt=tag.textContent;tag.textContent='';tag.style.opacity='1';let i=0;setTimeout(()=>{const t=setInterval(()=>{tag.textContent=txt.slice(0,++i);if(i>=txt.length)clearInterval(t);},26);},600);}
+</script>
+<!-- THREE.js 3D Background -->
+<canvas id="bg3d" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;pointer-events:none;"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  const canvas = document.getElementById('bg3d');
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setClearColor(0x050810, 1);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 1000);
+  camera.position.set(0, 0, 5);
+
+  const ico = new THREE.Mesh(
+    new THREE.IcosahedronGeometry(1.8, 2),
+    new THREE.MeshBasicMaterial({ color: 0x4f8ef7, wireframe: true, transparent: true, opacity: 0.18 })
+  );
+  scene.add(ico);
+
+  const ring = new THREE.Mesh(
+    new THREE.TorusGeometry(2.5, 0.008, 6, 90),
+    new THREE.MeshBasicMaterial({ color: 0x22d3ee, transparent: true, opacity: 0.25 })
+  );
+  ring.rotation.x = Math.PI / 2.2;
+  scene.add(ring);
+
+  const ring2 = new THREE.Mesh(
+    new THREE.TorusGeometry(3.1, 0.005, 6, 90),
+    new THREE.MeshBasicMaterial({ color: 0x818cf8, transparent: true, opacity: 0.15 })
+  );
+  ring2.rotation.x = Math.PI/3; ring2.rotation.z = Math.PI/4;
+  scene.add(ring2);
+
+  const oct = new THREE.Mesh(
+    new THREE.OctahedronGeometry(1.1, 0),
+    new THREE.MeshBasicMaterial({ color: 0x34d399, wireframe: true, transparent: true, opacity: 0.12 })
+  );
+  scene.add(oct);
+
+  const pPos = new Float32Array(600);
+  for (let i = 0; i < 600; i++) pPos[i] = (Math.random() - 0.5) * 12;
+  const pGeo = new THREE.BufferGeometry();
+  pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
+  scene.add(new THREE.Points(pGeo,
+    new THREE.PointsMaterial({ color: 0x4f8ef7, size: 0.04, transparent: true, opacity: 0.6 })
+  ));
+
+  let mx = 0, my = 0;
+  window.addEventListener('mousemove', e => {
+    mx = (e.clientX/window.innerWidth - 0.5) * 2;
+    my = -(e.clientY/window.innerHeight - 0.5) * 2;
+  });
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth/window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+
+  let t = 0;
+  (function animate(){
+    requestAnimationFrame(animate); t += 0.004;
+    ico.rotation.x = t*0.3 + my*0.15; ico.rotation.y = t*0.5 + mx*0.15;
+    oct.rotation.x = -t*0.4; oct.rotation.y = t*0.6;
+    ring.rotation.z = t*0.2; ring2.rotation.y = t*0.15;
+    camera.position.x += (mx*0.3 - camera.position.x)*0.05;
+    camera.position.y += (my*0.3 - camera.position.y)*0.05;
+    camera.lookAt(0,0,0);
+    renderer.render(scene, camera);
+  })();
+})();
 </script>
 </body>
 </html>
