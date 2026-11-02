@@ -1,45 +1,59 @@
-# Thousifuddin Shaik — Portfolio
+# Thousifuddin Shaik · Latent Space portfolio
 
-**Live site:** [thousif3.github.io](https://thousif3.github.io)
+Live: <https://thousif3.github.io>
 
-## About
+Every project, role, award, certification and skill is one point in a 3D space,
+**placed by meaning**. A Python pipeline embeds each item's description and folds
+the space into 3D with UMAP. The site turns scroll into a camera flight through it,
+and the search box embeds your query in the browser and flies to the nearest items.
 
-Personal portfolio for Thousifuddin Shaik — MS Computer Science student at Indiana University Indianapolis, CSM & CSPO certified Project Manager, and creator of TALON.
+## Stack
 
-Built with vanilla HTML/CSS/JS. No frameworks, no dependencies, no build step. Designed with a dark techy aesthetic featuring a custom cursor, scroll animations, and an interactive terminal.
+| Layer | Tech |
+| --- | --- |
+| Languages | TypeScript, Python, GLSL, HTML/CSS |
+| Framework | Next.js (App Router, static export) |
+| 3D | Three.js via react-three-fiber, custom GLSL point shaders |
+| Motion | GSAP + ScrollTrigger, Lenis smooth scroll |
+| Styling | Tailwind CSS v4 + hand-written CSS |
+| Build-time ML | sentence-transformers (all-MiniLM-L6-v2), UMAP, scikit-learn |
+| In-browser ML | Transformers.js (same MiniLM weights) or a TF-IDF + SVD fallback |
+| Hosting | GitHub Pages via GitHub Actions |
 
-## Features
+## How it fits together
 
-- **Interactive Terminal** — type `help` at the bottom-right terminal for commands like `download-resume`, `list-skills`, `contact`, `talon-stats`
-- **Live TALON Stats** — pulls real-time data from the TALON system via GitHub Pages JSON feed
-- **ARCHIVED DATA badge** — automatically shown if stats are older than 24 hours
-- **System Architecture diagram** — SVG showing the full TALON pipeline
-- **Current Sprint section** — shows active TALON development phases
-- **Mobile-optimized** — custom cursor disabled on touch devices
-- **OG meta tags** — proper LinkedIn/Discord link previews
+```
+src/content/content.json  ──►  pipeline/embed.py  ──►  public/latent.json
+   (all site text)              (embed + UMAP 3D)        (positions + vectors)
+                                                              │
+                         Next.js static build  ◄──────────────┘
+                                   │
+     browser: r3f point cloud (GLSL) · ScrollTrigger camera · DOM cards · search
+```
 
-## Sections
+- `pipeline/embed.py --backend minilm` is what CI runs. `--backend tfidf` needs no
+  model download; the browser then re-runs the same TF-IDF + SVD math for search.
+  The footer says which backend built the live layout.
+- Without WebGL2 the home page falls back to a static grid with the same search.
 
-| Section | Description |
-|---------|-------------|
-| Hero | Name, title, key stats |
-| About | Bio, skills grid, CSM/CSPO certifications |
-| TALON | Flagship project showcase with live stats and architecture diagram |
-| Projects | 6 projects with Problem/Solution/Impact format |
-| Experience | Timeline of roles and education |
-| Contact | Form (mailto), LinkedIn, GitHub, resume download |
+## Edit content
 
-## Tech Stack
+1. Change `src/content/content.json`.
+2. `python3 pipeline/embed.py` to rebuild the layout (CI does this on every push).
+3. Push to `main`.
 
-- HTML5 / CSS3 / Vanilla JS
-- Google Fonts: Space Mono + Outfit
-- No external JS dependencies
-- Hosted on GitHub Pages
+## Run locally
 
-## Updating
+```bash
+npm install --ignore-scripts      # skips onnxruntime-node's native download (browser-only use)
+pip install -r pipeline/requirements.txt
+python3 pipeline/embed.py         # minilm if available, else tfidf
+npm run dev
+```
 
-To update content, edit `index.html` directly and commit. Live stats update automatically every hour via the TALON scheduler pushing to `thousif3/talon-stats`.
+## Deploy
 
----
-
-*Built by Thousifuddin Shaik · thousifsk3@gmail.com · Indianapolis, IN*
+Repo **Settings → Pages → Source: GitHub Actions**. Every push to `main` runs
+`.github/workflows/deploy.yml`. For a custom domain, set it under Settings → Pages
+and add a repo variable `SITE_URL` (e.g. `https://thousif3.dev`) so the sitemap and
+share cards use it.

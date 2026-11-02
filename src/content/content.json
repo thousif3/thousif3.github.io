@@ -1,0 +1,558 @@
+{
+  "person": {
+    "name": "Thousifuddin Shaik",
+    "short": "Thousif",
+    "brand": "THOUSIF.DEV",
+    "headline": "I build AI systems that do real work, then run them like products.",
+    "roles": [
+      "AI Systems",
+      "Product & Program Management",
+      "Operations"
+    ],
+    "degree": "MS Computer Science · IU Indianapolis",
+    "gradTerm": "Fall 2027",
+    "gpa": "3.83",
+    "city": "Indianapolis, IN",
+    "timeZone": "America/Indiana/Indianapolis",
+    "workAuth": "F-1 CPT eligible (subject to academic advisor approval)",
+    "openTo": "Open to AI, automation, product/program management, operations and data roles. Indianapolis, remote or hybrid.",
+    "email": "thousifsk3@gmail.com",
+    "phone": "+1 (317) 457-1891",
+    "phoneHref": "tel:+13174571891",
+    "linkedin": "https://www.linkedin.com/in/thousifuddin-shaik/",
+    "github": "https://github.com/thousif3",
+    "resumePdf": null,
+    "statsFeed": "https://thousif3.github.io/talon-stats/stats.json"
+  },
+  "domains": [
+    {
+      "id": "ai",
+      "label": "AI systems & research",
+      "color": "#22d3ee"
+    },
+    {
+      "id": "product",
+      "label": "Product & program management",
+      "color": "#a78bfa"
+    },
+    {
+      "id": "ops",
+      "label": "Operations",
+      "color": "#fbbf24"
+    },
+    {
+      "id": "community",
+      "label": "Leadership & community",
+      "color": "#34d399"
+    },
+    {
+      "id": "eng",
+      "label": "Engineering & web",
+      "color": "#f472b6"
+    }
+  ],
+  "items": [
+    {
+      "id": "talon",
+      "kind": "project",
+      "featured": 1,
+      "domain": "ai",
+      "title": "TALON",
+      "subtitle": "Self-hosted multi-agent AI system",
+      "date": "Ongoing",
+      "status": "Live · evolving",
+      "summary": "Started as an AI job-search pipeline and grew into a self-hosted multi-agent platform: a model gateway, a mixture-of-agents engine and CI/CD, with a human approving every outward action.",
+      "bullets": [
+        "Original pipeline: job APIs, LLM scoring, Gmail OAuth, Telegram alerts, CRM sync, a network graph and daily reporting, shipped in phased releases.",
+        "Added a LiteLLM model gateway that routes between local Ollama models and cloud models, a mixture-of-agents engine and a CI/CD pipeline.",
+        "Human-in-the-loop by design: it reads and drafts but never sends email or applies to jobs on its own.",
+        "Now the base for a multi-agent security research demo in an independent study at IU Indianapolis."
+      ],
+      "stack": [
+        "Node.js",
+        "PM2",
+        "Ollama",
+        "LiteLLM",
+        "Gemini",
+        "Tailscale",
+        "Ubuntu",
+        "GitHub Actions"
+      ],
+      "links": [
+        {
+          "label": "Live stats",
+          "href": "https://thousif3.github.io/talon-stats/"
+        },
+        {
+          "label": "TALON Chat",
+          "href": "https://thousif3.github.io/talon-chat/"
+        }
+      ],
+      "liveStats": true
+    },
+    {
+      "id": "si-news",
+      "kind": "project",
+      "featured": 2,
+      "domain": "ai",
+      "title": "si_news",
+      "subtitle": "Free tech & AI news aggregator",
+      "date": "Oct 2026 – present",
+      "status": "Live",
+      "summary": "A free site that gathers the latest AI and tech news (frontier labs, chips, international AI) into one fast stream, built at zero hosting cost.",
+      "bullets": [
+        "Deployed on Cloudflare Pages; streams the latest stories with archive pages and flat geometric SVG glyphs instead of photos.",
+        "Designed for $0 running cost; AI summaries are planned through a model gateway that prefers local models and falls back to cloud.",
+        "Built by looping with Claude Code, then reviewed and directed by hand."
+      ],
+      "stack": [
+        "Cloudflare Pages",
+        "JavaScript",
+        "LLM gateway",
+        "Claude Code"
+      ],
+      "links": [
+        {
+          "label": "Visit si_news",
+          "href": "https://si-news.pages.dev"
+        }
+      ]
+    },
+    {
+      "id": "latent-space",
+      "kind": "project",
+      "featured": 3,
+      "domain": "eng",
+      "title": "This portfolio",
+      "subtitle": "A latent space you can fly through",
+      "date": "Nov 2026",
+      "status": "You're in it",
+      "summary": "Every bright point here is a real project, role, award or skill, placed by its meaning: a Python pipeline embeds each description and UMAP folds the space into 3D.",
+      "bullets": [
+        "Build time: Python embeds every item (sentence-transformers MiniLM), reduces to 3D with UMAP and writes one JSON file.",
+        "Run time: Next.js and react-three-fiber draw the cloud with custom GLSL shaders; GSAP ScrollTrigger and Lenis turn scroll into a camera flight.",
+        "The search box embeds your query in the browser: instantly with TF-IDF, or with the same MiniLM model that placed the points if you opt in to deep search."
+      ],
+      "stack": [
+        "TypeScript",
+        "Python",
+        "GLSL",
+        "Next.js",
+        "Three.js",
+        "react-three-fiber",
+        "GSAP",
+        "Lenis",
+        "Transformers.js",
+        "UMAP"
+      ],
+      "links": [
+        {
+          "label": "Source on GitHub",
+          "href": "https://github.com/thousif3/thousif3.github.io"
+        }
+      ]
+    },
+    {
+      "id": "anta",
+      "kind": "project",
+      "featured": 4,
+      "domain": "ai",
+      "title": "ANTA",
+      "subtitle": "Autonomous Network Triage Agent",
+      "date": "Fall 2026",
+      "status": "In progress",
+      "summary": "An agentic network-triage assistant that drives Wireshark/TShark to inspect captures and surface what matters, proposed for CSCI B577 Security Engineering.",
+      "bullets": [
+        "Proposed as the course project for CSCI B577 Security Engineering at IU Indianapolis."
+      ],
+      "stack": [
+        "Python",
+        "TShark",
+        "Wireshark",
+        "LLM agents"
+      ],
+      "links": []
+    },
+    {
+      "id": "fixmyitch",
+      "kind": "project",
+      "featured": 5,
+      "domain": "product",
+      "title": "FixMyItch",
+      "subtitle": "Live web product",
+      "date": "2026",
+      "status": "Live",
+      "summary": "A public web product at fixmyitch.io, shipped and iterated as a real product rather than a class demo.",
+      "bullets": [],
+      "stack": [
+        "Web",
+        "Product"
+      ],
+      "links": [
+        {
+          "label": "Visit FixMyItch",
+          "href": "https://fixmyitch.io"
+        }
+      ]
+    },
+    {
+      "id": "talon-chat",
+      "kind": "project",
+      "domain": "eng",
+      "title": "TALON Chat",
+      "subtitle": "Chat front end for the TALON stack",
+      "date": "2026",
+      "status": "Live",
+      "summary": "A lightweight chat interface that talks to the TALON stack, hosted on GitHub Pages.",
+      "bullets": [],
+      "stack": [
+        "JavaScript",
+        "APIs",
+        "GitHub Pages"
+      ],
+      "links": [
+        {
+          "label": "Open TALON Chat",
+          "href": "https://thousif3.github.io/talon-chat/"
+        }
+      ]
+    },
+    {
+      "id": "building-manager",
+      "kind": "role",
+      "domain": "ops",
+      "title": "CE Building Manager & Operations Team Member",
+      "org": "IU Indianapolis",
+      "date": "Current",
+      "summary": "On-campus building operations role.",
+      "bullets": []
+    },
+    {
+      "id": "parking-ops",
+      "kind": "role",
+      "domain": "ops",
+      "title": "Parking Operations Coordinator",
+      "org": "IU Indianapolis",
+      "date": "Current",
+      "summary": "On-campus parking operations role.",
+      "bullets": []
+    },
+    {
+      "id": "grader",
+      "kind": "role",
+      "domain": "eng",
+      "title": "Grader, CSCI-C 455 Analysis of Algorithms I",
+      "org": "Luddy School · IU Indianapolis",
+      "date": "Fall 2026",
+      "summary": "Grades coursework for the analysis of algorithms course.",
+      "bullets": []
+    },
+    {
+      "id": "lsc-secretary",
+      "kind": "role",
+      "domain": "community",
+      "title": "Secretary, LSC",
+      "org": "IU Indianapolis",
+      "date": "Current",
+      "summary": "Serves as secretary of the LSC student organization.",
+      "bullets": []
+    },
+    {
+      "id": "cpc",
+      "kind": "role",
+      "domain": "product",
+      "title": "Chief Placement Coordinator",
+      "org": "CBIT · Hyderabad",
+      "date": "2024 – 2025",
+      "summary": "Led campus placements for the CSE-AI&ML department.",
+      "bullets": [
+        "Coordinated placement drives resulting in offers for 100+ students across CSE and AI&ML departments.",
+        "Managed relationships with 20+ recruiting companies across product, IT, consulting and services.",
+        "Built placement tracking systems and maintained company contact databases to streamline the recruiting pipeline.",
+        "Awarded a gold plaque by the CBIT Principal and a formal Certificate of Appreciation."
+      ]
+    },
+    {
+      "id": "neural-nexus",
+      "kind": "role",
+      "domain": "community",
+      "title": "VP & Technical Project Lead, Neural Nexus · ACM Membership Chair",
+      "org": "CBIT · Hyderabad",
+      "date": "2023 – 2024",
+      "summary": "Led CBIT's AI/ML student club and served on the ACM chapter's leadership.",
+      "bullets": [
+        "Organized \"Bits and Bots: De-mystifying AI & ML\" with LearnWolf (Oct 2023).",
+        "Membership Chairperson and General Secretary, ACM CBIT Chapter 2023–24.",
+        "Organized workshops and seminars; attended the ACM India Regional Chapter Summit (Oct 2024)."
+      ]
+    },
+    {
+      "id": "educationusa",
+      "kind": "role",
+      "domain": "community",
+      "title": "EducationUSA Volunteer",
+      "org": "US Department of State · Y-Axis Foundation",
+      "date": "2023",
+      "summary": "Selected volunteer for the EducationUSA Graduate Roadshow.",
+      "bullets": [
+        "Received a Certificate of Appreciation for outstanding dedication."
+      ]
+    },
+    {
+      "id": "coderscave",
+      "kind": "role",
+      "domain": "eng",
+      "title": "Web Development Virtual Intern",
+      "org": "CodersCave · AICTE + MSME",
+      "date": "2023 · 1 month",
+      "summary": "Completed a one-month virtual web development internship with an outstanding-performance certificate.",
+      "bullets": []
+    },
+    {
+      "id": "ms-cs",
+      "kind": "education",
+      "domain": "ai",
+      "title": "MS Computer Science",
+      "org": "Indiana University Indianapolis · Luddy School",
+      "date": "Expected Fall 2027 · GPA 3.83",
+      "summary": "Graduate study in computer science, including security engineering."
+    },
+    {
+      "id": "be-cs",
+      "kind": "education",
+      "domain": "ai",
+      "title": "BE Computer Science (AI & ML)",
+      "org": "CBIT · Osmania University",
+      "date": "",
+      "summary": "Undergraduate degree in computer science specializing in artificial intelligence and machine learning."
+    },
+    {
+      "id": "csm",
+      "kind": "cert",
+      "domain": "product",
+      "title": "Certified ScrumMaster (CSM)",
+      "org": "Scrum Alliance",
+      "summary": "Agile delivery, sprint facilitation and removing impediments for Scrum teams."
+    },
+    {
+      "id": "cspo",
+      "kind": "cert",
+      "domain": "product",
+      "title": "Certified Scrum Product Owner (CSPO)",
+      "org": "Scrum Alliance",
+      "summary": "Product ownership: backlog, prioritization and maximizing value delivered."
+    },
+    {
+      "id": "task-java",
+      "kind": "cert",
+      "domain": "eng",
+      "title": "Java Fundamentals, 90 hours",
+      "org": "TASK · Telangana State Government",
+      "summary": "90-hour Java programming training."
+    },
+    {
+      "id": "cpc-gold",
+      "kind": "award",
+      "domain": "product",
+      "title": "CPC Gold Award",
+      "org": "CBIT · Principal Award 2024–25",
+      "summary": "Gold plaque for outstanding commitment as Chief Placement Coordinator."
+    },
+    {
+      "id": "cpc-appreciation",
+      "kind": "award",
+      "domain": "product",
+      "title": "Certificate of Appreciation, Chief Placement Coordinator",
+      "org": "CBIT · signed by the Principal",
+      "summary": "Formal recognition signed by Prof. C.V. Narasimhulu for service as Chief Placement Coordinator."
+    },
+    {
+      "id": "educationusa-cert",
+      "kind": "award",
+      "domain": "community",
+      "title": "EducationUSA Certificate of Appreciation",
+      "org": "US Dept of State · Y-Axis Foundation",
+      "summary": "Recognized for dedication as a volunteer for the EducationUSA Graduate Roadshow."
+    },
+    {
+      "id": "nexus-recognition",
+      "kind": "award",
+      "domain": "community",
+      "title": "VP Recognition, Neural Nexus",
+      "org": "CBIT · HOD AI & ML + Principal",
+      "summary": "Certificate of Recognition for leadership as VP of the Neural Nexus AI/ML club."
+    },
+    {
+      "id": "acm-chair",
+      "kind": "award",
+      "domain": "community",
+      "title": "ACM Membership Chairperson Recognition",
+      "org": "ACM CBIT Chapter · 2023–24",
+      "summary": "Recognition for service as Membership Chairperson, organizing events and workshops as General Secretary."
+    },
+    {
+      "id": "acm-summit",
+      "kind": "award",
+      "domain": "community",
+      "title": "ACM India Regional Chapter Summit",
+      "org": "ACM · KLH Hyderabad · Oct 2024",
+      "summary": "Certificate of participation at the ACM India Regional Chapter Summit."
+    },
+    {
+      "id": "learnwolf",
+      "kind": "award",
+      "domain": "ai",
+      "title": "LearnWolf Certificate, Bits and Bots",
+      "org": "LearnWolf · Oct 2023",
+      "summary": "Awarded for organizing \"Bits and Bots: De-mystifying AI & ML\" through the Neural Nexus club."
+    },
+    {
+      "id": "cdc-lecture",
+      "kind": "award",
+      "domain": "eng",
+      "title": "CBIT CDC Guest Lecture",
+      "org": "Career Development Centre · Feb 2022",
+      "summary": "Participated in \"Journey from .C to .EXE and Memory Management\"."
+    },
+    {
+      "id": "sk-roadmapping",
+      "kind": "skill",
+      "domain": "product",
+      "title": "Roadmapping & PRDs",
+      "summary": "Product roadmaps, requirement documents and prioritization."
+    },
+    {
+      "id": "sk-sprints",
+      "kind": "skill",
+      "domain": "product",
+      "title": "Sprint planning & backlog grooming",
+      "summary": "Agile Scrum ceremonies, backlog refinement and sprint planning."
+    },
+    {
+      "id": "sk-stakeholders",
+      "kind": "skill",
+      "domain": "product",
+      "title": "Stakeholder management",
+      "summary": "Aligning recruiters, faculty and teams on shared goals."
+    },
+    {
+      "id": "sk-okrs",
+      "kind": "skill",
+      "domain": "product",
+      "title": "OKRs, KPIs & A/B testing",
+      "summary": "Defining metrics, tracking KPIs and running experiments."
+    },
+    {
+      "id": "sk-user-research",
+      "kind": "skill",
+      "domain": "product",
+      "title": "User research",
+      "summary": "Interviewing users and turning findings into requirements."
+    },
+    {
+      "id": "sk-jira",
+      "kind": "skill",
+      "domain": "product",
+      "title": "Jira & Confluence",
+      "summary": "Issue tracking, sprint boards and team documentation."
+    },
+    {
+      "id": "sk-python",
+      "kind": "skill",
+      "domain": "eng",
+      "title": "Python",
+      "summary": "Scripting, data pipelines and machine learning code."
+    },
+    {
+      "id": "sk-node",
+      "kind": "skill",
+      "domain": "eng",
+      "title": "Node.js",
+      "summary": "Backend services, automation workers and API integrations."
+    },
+    {
+      "id": "sk-sql",
+      "kind": "skill",
+      "domain": "eng",
+      "title": "SQL",
+      "summary": "Querying and modeling relational data."
+    },
+    {
+      "id": "sk-react",
+      "kind": "skill",
+      "domain": "eng",
+      "title": "React & web front end",
+      "summary": "HTML, CSS, JavaScript and React interfaces."
+    },
+    {
+      "id": "sk-java",
+      "kind": "skill",
+      "domain": "eng",
+      "title": "Java",
+      "summary": "Object-oriented programming in Java."
+    },
+    {
+      "id": "sk-docker",
+      "kind": "skill",
+      "domain": "ops",
+      "title": "Docker & Linux",
+      "summary": "Containers, Linux servers and self-hosted infrastructure."
+    },
+    {
+      "id": "sk-git",
+      "kind": "skill",
+      "domain": "eng",
+      "title": "Git & REST APIs",
+      "summary": "Version control and building or consuming REST APIs."
+    },
+    {
+      "id": "sk-pm2",
+      "kind": "skill",
+      "domain": "ops",
+      "title": "PM2 & process ops",
+      "summary": "Keeping long-running services alive, scheduled jobs and monitoring."
+    },
+    {
+      "id": "sk-prompting",
+      "kind": "skill",
+      "domain": "ai",
+      "title": "Prompt engineering",
+      "summary": "Designing prompts, evaluations and structured outputs for LLMs."
+    },
+    {
+      "id": "sk-local-llms",
+      "kind": "skill",
+      "domain": "ai",
+      "title": "Ollama & local LLMs",
+      "summary": "Running and routing open-weight language models on local hardware."
+    },
+    {
+      "id": "sk-llm-apis",
+      "kind": "skill",
+      "domain": "ai",
+      "title": "Gemini & OpenAI APIs",
+      "summary": "Integrating hosted large language model APIs."
+    },
+    {
+      "id": "sk-ml",
+      "kind": "skill",
+      "domain": "ai",
+      "title": "ML pipelines & TensorFlow",
+      "summary": "Training and serving machine learning models."
+    },
+    {
+      "id": "sk-agents",
+      "kind": "skill",
+      "domain": "ai",
+      "title": "Multi-agent systems",
+      "summary": "Orchestrating several LLM agents through a model gateway with human approval."
+    },
+    {
+      "id": "sk-data",
+      "kind": "skill",
+      "domain": "ops",
+      "title": "Data analysis & spreadsheets",
+      "summary": "Excel, Google Sheets and the Sheets API for reporting and analysis."
+    }
+  ]
+}
